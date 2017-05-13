@@ -1,8 +1,7 @@
 FROM php:7.0-apache
 MAINTAINER Chris927 <chris@uber5.com>
 
-RUN docker-php-ext-install pdo mysql \
-  && docker-php-ext-install pdo mysqli
+RUN docker-php-ext-install pdo pdo_mysql mysqli
 
 ARG RELEASE=1.30
 RUN set -ex \

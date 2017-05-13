@@ -1,8 +1,8 @@
 FROM php:7.0-apache
 MAINTAINER Chris927 <chris@uber5.com>
 
-RUN apt-get update \
-  && apt-get install php5-mysql
+RUN docker-php-ext-install pdo mysql \
+  && docker-php-ext-install pdo mysqli
 
 ARG RELEASE=1.30
 RUN curl -L https://github.com/wsaqaf/mecodify/archive/${RELEASE}.tar.gz -o source.tar.gz \

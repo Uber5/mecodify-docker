@@ -5,6 +5,8 @@ RUN docker-php-ext-install pdo mysql \
   && docker-php-ext-install pdo mysqli
 
 ARG RELEASE=1.30
-RUN curl -L https://github.com/wsaqaf/mecodify/archive/${RELEASE}.tar.gz -o source.tar.gz \
-  && gunzip source.tar.gz \
+RUN set -ex \
+  && curl -L https://github.com/wsaqaf/mecodify/archive/${RELEASE}.tar.gz -o source.tar.gz \
+  && tar xfz source.tar.gz \
+  && rm source.tar.gz \
   && mv mecodify-${RELEASE}/* /var/www/html/

@@ -8,4 +8,5 @@ RUN set -ex \
   && curl -L https://github.com/wsaqaf/mecodify/archive/${RELEASE}.tar.gz -o source.tar.gz \
   && tar xfz source.tar.gz \
   && rm source.tar.gz \
-  && mv mecodify-${RELEASE}/* /var/www/html/
+  && mv mecodify-${RELEASE}/* /var/www/html/ \
+  && chown -R 33 /var/www/html/tmp

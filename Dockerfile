@@ -4,9 +4,9 @@ MAINTAINER Chris927 <chris@uber5.com>
 RUN docker-php-ext-install pdo mysql \
   && docker-php-ext-install pdo mysqli
 
-ARG RELEASE=1.30
-RUN set -ex \
-  && curl -L https://github.com/wsaqaf/mecodify/archive/${RELEASE}.tar.gz -o source.tar.gz \
-  && tar xfz source.tar.gz \
-  && rm source.tar.gz \
-  && mv mecodify-${RELEASE}/* /var/www/html/
+RUN apt-get update \
+  && apt-get install -y git \
+  && apt-get clone https://github.com/Chris927/mecodify.git \
+  && cd mecodify \
+  && git checkout configurable-signup \
+  && mv ./* /var/www/html/

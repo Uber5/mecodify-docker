@@ -9,4 +9,5 @@ RUN apt-get update \
 RUN git clone https://github.com/Chris927/mecodify.git \
   && cd mecodify \
   && git checkout configurable-signup \
-  && mv ./* /var/www/html/
+  && mv ./* /var/www/html/ \
+  && chown -R 33 /var/www/html/tmp

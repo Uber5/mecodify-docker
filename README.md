@@ -6,13 +6,13 @@ Apache and PHP).
 
 ## How
 
-* Create a `configurations.php` file, as per the [mecodify installation
-  instructions](https://github.com/wsaqaf/mecodify/blob/master/install.md).
-* Run a container, mapping `configurations.php` into the container's filesystem:
+See the [installation
+instructions](https://github.com/Uber5/mecodify-docker/wiki/How-to-Install) on
+the Wiki.
 
-```
-docker -it -v /path/on/host/configurations.php:/var/www/html/configurations.php chris5/mecodify-docker
-```
+For more configuration options / details, see the [mecodify installation
+instructions](https://github.com/wsaqaf/mecodify/blob/master/install.md).
 
-That's it. If however more configuration is required, check the base docker
-image, which is `php:5.0-apache`.
+If you need to customize e.g. the http server, check the
+[documentation](https://hub.docker.com/_/php/) of the base docker image
+`php:5.0-apache`.

@@ -15,4 +15,4 @@ docker -it -v /path/on/host/configurations.php:/var/www/html/configurations.php 
 ```
 
 That's it. If however more configuration is required, check the base docker
-image, which is `php:7.0-apache`.
+image, which is `php:5.0-apache`.
